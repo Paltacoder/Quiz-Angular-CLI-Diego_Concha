@@ -1,0 +1,93 @@
+<form [formGroup]="formulario" >
+    <br>
+    <div class="mb-3">
+        <label class="form-label">Nombres:</label>
+        <input formControlName="nombres" type="text" class="form-control" placeholder="nombres..">
+    </div>
+      
+      <div class="mb-3">
+        <label class="form-label">Apellidos:</label>
+        <input formControlName="apellidos" type="text" class="form-control" placeholder="apellidos..">
+      </div>
+      <br>
+      <label>Género:</label>
+      <div class="form-check">
+        <input formControlName="radioGenero" class="form-check-input" name="radioGenero" type="radio" value="mujer">
+        <label class="form-check-label" for="flexRadioDefault1">
+          Mujer
+        </label>
+      </div>
+      <div class="form-check">
+        <input formControlName="radioGenero" class="form-check-input" name="radioGenero" type="radio" value="hombre">
+        <label class="form-check-label" for="flexRadioDefault2">
+          Hombre
+        </label>
+      </div>
+      <div class="form-check">
+        <input formControlName="radioGenero" class="form-check-input" name="radioGenero" type="radio" value="otro">
+        <label class="form-check-label" for="flexRadioDefault1">
+          Otro
+        </label>
+      </div>
+      <br><br>
+      <div class="seleccionPais">
+        <label>País:</label><br><br>
+        <select class="form-select" formControlName="pais">
+        <option value="" disabled selected>Por favor elija una opción</option>        
+        <option value="Alemania">Alemania</option>
+        <option value="Argentina">Argentina</option>
+        <option value="Bélgica">Bélgica</option>
+        <option value="Brasil">Brasil</option>
+        <option value="Chile">Chile</option>
+        <option value="China">China</option>
+        <option value="Colombia">Colombia</option>
+        <option value="Guatemala">Guatemala</option>
+        <option value="Puerto Rico">Puerto Rico</option>
+        <option value="Uruguay">Uruguay</option>
+        
+        </select>
+      </div>
+      
+      <br><br>
+      <div class="mb-3">
+        <label class="form-label">Ciudad:</label>
+        <input formControlName="ciudad" type="text" class="form-control" placeholder="Ciudad">
+      </div>
+
+      <button type="button" (click)="limpiarCampos()" class="btn btn-dark mr-3">Cancelar</button>
+      <button type="button" (click)="Crear()" class="btn btn-dark mr-3">Crear</button>
+
+      <div>
+          <div *ngIf="nombres.invalid && nombres.touched">Ingrese nombres por favor
+            <div class="alert alert-dark" role="alert">
+                Ingrese sus nombres por favor.
+              </div>
+          </div>
+            
+          <div *ngIf="apellidos.invalid && apellidos.touched">
+            <div class="alert alert-dark" role="alert">
+                Ingrese sus apellidos por favor.
+              </div>
+          </div>
+
+          <div *ngIf="pais.invalid && pais.touched">
+            <div class="alert alert-dark" role="alert">
+                Ingrese su país por favor.
+              </div>
+          </div>
+
+          <div *ngIf="ciudad.invalid && ciudad.touched">
+            <div class="alert alert-dark" role="alert">
+                Ingrese su ciudad por favor.
+              </div>
+          </div>
+
+          <div *ngIf="radioGenero.invalid && radioGenero.touched">
+            <div class="alert alert-dark" role="alert">
+                Ingrese su género por favor.
+              </div>
+          </div>
+      </div>
+
+
+</form>

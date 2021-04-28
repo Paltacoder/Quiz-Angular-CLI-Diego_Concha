@@ -1,0 +1,16 @@
+<div class="row row-cols-1 row-cols-md-3 g-2">
+    <div class="col" *ngFor="let item of listaGente">
+      <div class="card border-dark mb-3 text-white bg-dark mb-3">
+        <img *ngIf="item.genero==='hombre'" src="assets/images/man.png" class="card-img-top" alt="imagen genérica de un hombre">
+         <img *ngIf="item.genero==='mujer'" src="assets/images/woman.png" class="card-img-top" alt="imagen genérica de una mujer">
+         <img *ngIf="item.genero==='otro'" src="assets/images/avocado.jpg" class="card-img-top" alt="...">
+        
+        <div class="card-body">
+          <h5 class="card-title">{{item.nombres}} {{item.apellidos}}</h5>
+          <p class="card-text">{{item.pais}}, {{item.ciudad}}.</p>
+        </div>        
+      </div>
+    </div>        
+  </div>
+
+  
